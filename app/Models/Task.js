@@ -9,7 +9,11 @@ export class Task {
     this.checked = data.checked
     this.listId = data.listId
 
-
-
   }
+  get Template() {
+    return `
+<div>${this.title}</div>
+`
+  }
+
 }

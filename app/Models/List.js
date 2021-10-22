@@ -1,4 +1,7 @@
 import {
+  ProxyState
+} from "../AppState.js";
+import {
   generateId
 } from "../Utils/generateId.js";
 
@@ -24,16 +27,30 @@ export class List {
       <p class="card-text text-center">${this.completed ? this.completed : '0/0'}</p>
     </div>
 
-<!---  Tasks --->
+<div>
+    ${this.getTasks()}
+</div>
 
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-        aria-describedby="button-addon1">
-      <button class="btn btn-outline-secondary" type="button" id="add-task"
-        onclick="console.log('add task btn')">Add task</button>
-    </div>
+<form onsubmit="app.tasksController.createTask('${this.id}')">
+
+<div class="col-md-6 p-2">
+
+  <label for="" class="form-label">Create New Task:</label>
+  <input type="text" name="title" minlength="3" maxlength="50" required>
+</div>
+</form>
   </div>
 
   `
+  }
+
+
+  getTasks() {
+    const tasks = ProxyState.tasks.filter(t => this.id == t.listId)
+    let template = ''
+    tasks.forEach(t => {
+      template += t.Template
+    })
+    return template
   }
 }

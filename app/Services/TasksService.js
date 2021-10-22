@@ -4,14 +4,15 @@ import {
 import {
   Task
 } from "../Models/Task.js"
-import {
-  ListsController
-} from "../Controllers/ListsController.js";
 
 class TasksService {
-  constructor() {
-    console.log('tasksService connected');
+  createTask(taskData) {
+    console.log('createTask() invoked', taskData);
+
+    const task = new Task(taskData)
+    ProxyState.tasks = [...ProxyState.tasks, task]
   }
+
 }
 
 export const tasksService = new TasksService();
