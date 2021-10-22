@@ -37,7 +37,6 @@ export class ListsController {
     }
     console.log('createList invoked', newList);
     listsService.createList(newList)
-    saveState
     form.reset()
   }
   deleteList(id) {

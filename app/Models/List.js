@@ -33,7 +33,7 @@ export class List {
 
 <form onsubmit="app.tasksController.createTask('${this.id}')">
 
-<div class="col-md-6 p-2">
+<div class="col pt-3">
 
   <label for="" class="form-label">Create New Task:</label>
   <input type="text" name="title" minlength="3" maxlength="50" required>
@@ -46,6 +46,7 @@ export class List {
 
 
   getTasks() {
+
     const tasks = ProxyState.tasks.filter(t => this.id == t.listId)
     let template = ''
     tasks.forEach(t => {
