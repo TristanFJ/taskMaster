@@ -4,6 +4,9 @@ import {
 import {
   Task
 } from "../Models/Task.js"
+import {
+  saveState
+} from "../Utils/LocalStorage.js";
 
 class TasksService {
   createTask(taskData) {
@@ -15,9 +18,10 @@ class TasksService {
   }
 
   toggleCheck(id) {
-    // ProxyState.tasks = ProxyState.tasks.find(t => t.tId == id)
-    // console.log(ProxyState.tasks);
-
+    const tasks = ProxyState.tasks
+    const found = tasks.find(task => id == task.id)
+    found.checked = !found.checked
+    saveState()
   }
 
 }

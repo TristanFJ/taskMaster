@@ -21,8 +21,8 @@ export class TasksController {
   }
 
   toggleCheck(tId) {
-
     tasksService.toggleCheck(tId)
+    console.log('toggle');
   }
 
 

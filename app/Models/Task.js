@@ -13,12 +13,13 @@ export class Task {
   get Template() {
     return `
 
-    <input onclick="app.tasksController.toggleCheck()" type="checkbox" id="${this.id}" name="${this.id}"
+    <input onclick="app.tasksController.toggleCheck('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
     ${this.checked ? 'checked' : ''}>
     <label for="${this.id}">${this.title}</label><br>
 
 `
   }
+
 
 
 }
