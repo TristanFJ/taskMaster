@@ -22,12 +22,7 @@ export class ListsController {
   constructor() {
     ProxyState.on('lists', _draw)
     console.log('ListsController connected');
-
-
-
-
     _draw()
-
   }
 
   createList() {
@@ -41,5 +36,7 @@ export class ListsController {
     listsService.createList(newList)
     form.reset()
   }
-
+  deleteList(id) {
+    listsService.deleteList(id)
+  }
 }

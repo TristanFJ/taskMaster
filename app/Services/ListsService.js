@@ -19,6 +19,13 @@ class ListsService {
     ProxyState.lists = [...ProxyState.lists, list]
   }
 
+  deleteList(id) {
+    if (window.confirm('Are you sure you want to DELETE your beautiful list?!?!')) {
+      ProxyState.lists = ProxyState.lists.filter(l => l.id != id)
+      ProxyState.tasks = ProxyState.tasks.filter(t => t.listId != id)
+    }
+  }
+
 }
 
 export const listsService = new ListsService();
