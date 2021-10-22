@@ -16,8 +16,7 @@ export class Task {
     <input onclick="app.tasksController.toggleCheck('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
     ${this.checked ? 'checked' : ''}>
     <label for="${this.id}">${this.title}</label>
-    <button class="btn btn-sm btn-danger justify-content-end" onclick="app.tasksController.deleteTask('${this.id}')">x</button><br>
-
+    <button class="btn btn-sm btn-danger" onclick="app.tasksController.deleteTask('${this.id}')">x</button><br>
 
 `
   }

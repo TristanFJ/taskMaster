@@ -27,7 +27,7 @@ export class List {
       <p class="card-text text-center">${this.completed ? this.completed : this.countTasks()}</p>
     </div>
 
-<div>
+<div class="text-left">
     ${this.getTasks()}
 </div>
 
