@@ -17,13 +17,13 @@ export class List {
 
   get Template() {
     return `
-    <div class="card p-3 m-3 elevation-4" style="width: 15rem;">
+    <div class="card p-3 m-3 elevation-4" style="border-width: 3px; width: 15rem; border-color: ${this.color};">
     <div class="card-body">
       <h5 class="card-title text-center">${this.title}</h5>
-      <p class="card-text text-center">${this.completed}</p>
+      <p class="card-text text-center">${this.completed ? this.completed : '0/0'}</p>
     </div>
 
-    ${this.tasks}
+<!---  Tasks --->
 
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"

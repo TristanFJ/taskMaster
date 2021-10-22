@@ -6,8 +6,8 @@ import {
 } from "../Services/ListsService.js"
 
 function _draw() {
-  console.log('_draw() invoked');
   const lists = ProxyState.lists
+  console.log('_draw() invoked');
   let template = ''
 
   lists.forEach(l => template += l.Template)
@@ -20,7 +20,12 @@ function _draw() {
 
 export class ListsController {
   constructor() {
+    ProxyState.on('lists', _draw)
     console.log('ListsController connected');
+
+
+
+
     _draw()
 
   }
@@ -29,14 +34,12 @@ export class ListsController {
     window.event.preventDefault()
     const form = window.event.target
     const newList = {
-      title: form.title.value
-
-
+      title: form.title.value,
+      color: form.color.value,
     }
-
     console.log('createList invoked', newList);
-
+    listsService.createList(newList)
+    form.reset()
   }
-
 
 }

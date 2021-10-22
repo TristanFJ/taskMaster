@@ -11,8 +11,13 @@ import {
 class ListsService {
   constructor() {
     console.log('ListsService connected');
+
   }
 
+  createList(listData) {
+    const list = new List(listData)
+    ProxyState.lists = [...ProxyState.lists, list]
+  }
 
 }
 

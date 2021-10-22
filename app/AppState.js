@@ -13,19 +13,7 @@ class AppState extends EventEmitter {
   values = []
 
   /** @type {import('./Models/List').List[]} */
-  lists = [
-    new List({
-      id: 'firstfakelist',
-      title: 'Get Groceries',
-      color: '#62dc8d',
-      completed: '3/4'
-
-
-    })
-
-
-
-  ]
+  lists = []
 
   /** @type {import('./Models/Task').Task[]} */
   tasks = []
