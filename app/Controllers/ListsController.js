@@ -4,24 +4,27 @@ import {
 import {
   listsService
 } from "../Services/ListsService.js"
+import {
+  loadState,
+  saveState
+} from "../Utils/LocalStorage.js";
 
 function _draw() {
   const lists = ProxyState.lists
   console.log('_draw() invoked');
   let template = ''
-
   lists.forEach(l => template += l.Template)
-  console.log('drawing lists');
   document.getElementById('app').innerHTML = template
 }
-
-
-
 
 export class ListsController {
   constructor() {
     ProxyState.on('lists', _draw)
+    ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', _draw)
+    ProxyState.on('tasks', saveState)
     console.log('ListsController connected');
+    loadState()
     _draw()
   }
 
@@ -34,6 +37,7 @@ export class ListsController {
     }
     console.log('createList invoked', newList);
     listsService.createList(newList)
+    saveState
     form.reset()
   }
   deleteList(id) {
