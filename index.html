@@ -27,10 +27,19 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-6 p-4">
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-dark" type="button" id="add-list">Add list</button>
-            <input type="text" class="form-control" placeholder="" aria-label="add list" aria-describedby="add list">
-          </div>
+
+
+          <form onsubmit="app.listsController.createList()">
+
+            <div class="col-3">
+
+              <label for="" class="form-label">Create New List</label>
+              <input type="text" name="title">
+            </div>
+
+          </form>
+
+
         </div>
       </div>
     </div>
@@ -39,7 +48,9 @@
       <div class="row">
         <div class="col-12">
           <div id="app">
-            <div class="card p-3 m-3 elevation-4" style="width: 15rem;">
+
+
+            <!-- <div class="card p-3 m-3 elevation-4" style="width: 15rem;">
               <div class="card-body">
                 <h5 class="card-title text-center">Task List Name</h5>
                 <p class="card-text text-center">3/4</p>
@@ -65,17 +76,18 @@
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                   aria-describedby="button-addon1">
-                <button class="btn btn-outline-secondary" type="button" id="add-task">Add task</button>
+                <button class="btn btn-outline-secondary" type="button" id="add-task"
+                  onclick="console.log('add task btn')">Add task</button>
               </div>
+            </div> -->
 
-            </div>
           </div>
         </div>
       </div>
     </div>
     </div>
   </main>
-  <footer class="bg-dark text-light">
+  <footer class=" bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by <a href="https://github.com/tristanfj">Tristan Johns</a></small></p>
     </div>

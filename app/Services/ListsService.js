@@ -9,7 +9,9 @@ import {
 } from "../Models/List.js";
 
 class ListsService {
-
+  constructor() {
+    console.log('ListsService connected');
+  }
 
 
 }

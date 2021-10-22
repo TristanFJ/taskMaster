@@ -1,4 +1,7 @@
 import {
+  List
+} from "./Models/List.js"
+import {
   EventEmitter
 } from "./Utils/EventEmitter.js"
 import {
@@ -10,7 +13,19 @@ class AppState extends EventEmitter {
   values = []
 
   /** @type {import('./Models/List').List[]} */
-  lists = []
+  lists = [
+    new List({
+      id: 'firstfakelist',
+      title: 'Get Groceries',
+      color: '#62dc8d',
+      completed: '3/4'
+
+
+    })
+
+
+
+  ]
 
   /** @type {import('./Models/Task').Task[]} */
   tasks = []
