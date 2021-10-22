@@ -4,7 +4,6 @@ import {
 
 export class TasksController {
   constructor() {
-    console.log('TasksController connected');
 
   }
 
@@ -16,13 +15,19 @@ export class TasksController {
       listId: lId,
       checked: false
     }
-    console.log('createTask() invoked', taskData);
     tasksService.createTask(taskData)
+  }
+
+  deleteTask(id) {
+    tasksService.deleteTask(id)
   }
 
   toggleCheck(tId) {
     tasksService.toggleCheck(tId)
-    console.log('toggle');
+  }
+
+  countTasks() {
+    tasksService.countTasks
   }
 
 

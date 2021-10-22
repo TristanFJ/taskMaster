@@ -24,7 +24,7 @@ export class List {
     <button class="btn btn-sm btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete List</button>
     <div class="card-body">
       <h5 class="card-title text-center">${this.title}</h5>
-      <p class="card-text text-center">${this.completed ? this.completed : '0/0'}</p>
+      <p class="card-text text-center">${this.completed ? this.completed : this.countTasks()}</p>
     </div>
 
 <div>
@@ -53,5 +53,15 @@ export class List {
       template += t.Template
     })
     return template
+  }
+
+  countTasks() {
+    const tasks = ProxyState.tasks.filter(t => this.id == t.listId)
+    let totalTasks = tasks.length
+    console.log('totalTasks', totalTasks);
+    let found = tasks.filter(task => task.checked == true)
+    let totalComplete = found.length
+    console.log('totalComplete', found.length);
+    return `${totalTasks} tasks / ${totalComplete} complete`
   }
 }

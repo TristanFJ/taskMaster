@@ -13,12 +13,10 @@ export function saveState() {
     lists: ProxyState.lists,
     tasks: ProxyState.tasks,
   }))
-  console.log('saveState() invoked');
 }
 
 export function loadState() {
   let data = JSON.parse(localStorage.getItem('TasksApp'))
-  console.log('loadState() invoked', data);
 
   if (data) {
     ProxyState.lists = data.lists.map(l => new List(l))

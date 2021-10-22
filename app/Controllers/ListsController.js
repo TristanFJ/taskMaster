@@ -11,7 +11,6 @@ import {
 
 function _draw() {
   const lists = ProxyState.lists
-  console.log('_draw() invoked');
   let template = ''
   lists.forEach(l => template += l.Template)
   document.getElementById('app').innerHTML = template
@@ -23,7 +22,6 @@ export class ListsController {
     ProxyState.on('lists', saveState)
     ProxyState.on('tasks', _draw)
     ProxyState.on('tasks', saveState)
-    console.log('ListsController connected');
     loadState()
     _draw()
   }
@@ -35,7 +33,6 @@ export class ListsController {
       title: form.title.value,
       color: form.color.value,
     }
-    console.log('createList invoked', newList);
     listsService.createList(newList)
     form.reset()
   }

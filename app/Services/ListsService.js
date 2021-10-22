@@ -7,7 +7,6 @@ import {
 
 class ListsService {
   constructor() {
-    console.log('ListsService connected');
 
   }
 
