@@ -13,7 +13,7 @@ export class Task {
   get Template() {
     return `
 
-    <div class="row">
+    <div class="row align-items-center">
     <div class="col-10">
     <input onclick="app.tasksController.toggleCheck('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
     ${this.checked ? 'checked' : ''}>
