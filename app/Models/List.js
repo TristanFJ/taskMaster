@@ -20,23 +20,25 @@ export class List {
 
   get Template() {
     return `
-    <div class="card p-3 m-3 elevation-4" style="border-width: 3px; width: 15rem; border-color: ${this.color};">
+    <div class="card p-3 m-3 elevation-4" style="border-width: 3px; width: fit-content; height: fit-content; border-color: ${this.color};">
+
+    
     <button class="btn btn-sm btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete List</button>
     <div class="card-body">
       <h5 class="card-title text-center">${this.title}</h5>
       <p class="card-text text-center">${this.completed ? this.completed : this.countTasks()}</p>
     </div>
 
-<div class="text-left">
+<div class="container text-left d-flex flex-column">
     ${this.getTasks()}
 </div>
 
 <form onsubmit="app.tasksController.createTask('${this.id}')">
 
-<div class="col pt-3">
+<div class="col pt-3 input-group text-center">
 
-  <label for="" class="form-label">Create New Task:</label>
-  <input type="text" name="title" minlength="3" maxlength="50" required>
+  <label for="" class="form-label me-3">Add Task:</label>
+  <input class="elevation-4" type="text" name="title" minlength="3" maxlength="50" required>
 </div>
 </form>
   </div>
@@ -58,10 +60,8 @@ export class List {
   countTasks() {
     const tasks = ProxyState.tasks.filter(t => this.id == t.listId)
     let totalTasks = tasks.length
-    console.log('totalTasks', totalTasks);
     let found = tasks.filter(task => task.checked == true)
     let totalComplete = found.length
-    console.log('totalComplete', found.length);
     return `${totalTasks} tasks / ${totalComplete} complete`
   }
 }
