@@ -20,7 +20,7 @@ export class List {
 
   get Template() {
     return `
-    <div class="card p-3 m-3 elevation-4" style="border-width: 3px; width: fit-content; height: fit-content; border-color: ${this.color};">
+    <div class="col-4 card p-3 m-3 elevation-4" style="border-width: 3px; width: fit-content; height: fit-content; border-color: ${this.color};">
 
     
     <button class="btn btn-sm btn-danger" onclick="app.listsController.deleteList('${this.id}')">Delete List</button>
