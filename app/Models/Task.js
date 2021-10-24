@@ -17,7 +17,8 @@ export class Task {
     <div class="col-10">
     <input onclick="app.tasksController.toggleCheck('${this.id}')" type="checkbox" id="${this.id}" name="${this.id}"
     ${this.checked ? 'checked' : ''}>
-    <label for="${this.id}" style="${this.checked ? 'text-decoration: line-through;': ''
+    <label for="${this.id}" style="${this.checked ? 'text-decoration: line-through; text-shadow: 2px 2px 5px green;'
+    : ''
     }">${this.title}</label>
     </div>
 
