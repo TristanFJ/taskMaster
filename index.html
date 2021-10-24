@@ -25,23 +25,17 @@
   <main>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 p-4">
+      <div class="row ">
+        <div class="col-12 p-4 d-flex align-items-center">
 
 
           <form onsubmit="app.listsController.createList()">
 
-            <div class="col-md-6 p-2">
+            <label for="" class="form-label">Add List:</label>
+            <input type="text" name="title" minlength="3" maxlength="15" required>
 
-              <label for="" class="form-label">Add List:</label>
-              <input type="text" name="title" minlength="3" maxlength="15" required>
-            </div>
-
-            <div class="col-md-6 p-2">
-
-              <label for="color">Pick a color:</label>
-              <input type="color" id="color" name="color" value="#62dc8d" required>
-            </div>
+            <label for="color">Pick a color:</label>
+            <input class="py-2" type="color" id="color" name="color" value="#62dc8d" required>
 
           </form>
 
